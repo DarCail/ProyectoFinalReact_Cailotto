@@ -1,0 +1,41 @@
+.nav-container {
+    position: sticky;
+    z-index: 3;
+    top: 0;
+    background-color: #1a1a2e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    padding: 0 40px;
+  }
+  
+  .navbar-logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .ver-carrito {
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .cantidad-carrito {
+    background-color: #e94560;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 4px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    display: none;
+  }
