@@ -1,13 +1,13 @@
 import Navbar from "./components/Navbar/Navbar"
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
+import Home from "./components/Home/Home"
+
 
 function App() {
   
 
   return (
     <>
-    <Navbar/>
-    <ItemListContainer greeting={"Proximamente añadiremos juegos"}/>
+      <Home />
     </>
   )
 }
