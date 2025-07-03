@@ -1,15 +1,20 @@
-import Navbar from "./components/Navbar/Navbar"
-import Home from "./components/Home/Home"
+import { useState,useEffect, use } from "react"
+
+import Home from "./Home/Home"
+import { getFirestore,doc,getDoc } from "firebase/firestore"
+import Agregar from "./Agregar";
+import Navbar from "./components/Navbar/Navbar";
+
+import AppRoutes from "./Routes/Routes";
 
 
 function App() {
-  
 
   return (
-    <>
-      <Home />
-    </>
+
+      <AppRoutes />
+
   )
 }
 
-export default App
+export default App;

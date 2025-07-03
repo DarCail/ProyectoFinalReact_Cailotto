@@ -1,27 +1,31 @@
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./ItemListContainer.css";
 
-const Products = () => {
-    const [products, setProducts] = useState([])
 
-    useEffect(() => {
-       fetch("data.json")
-        .then((response) => response.json())
-        .then((data) => setProducts(data))
-    }, [])
-    
-    return products.map((product) => (
-        <div className="card" key={product.id}>
-            <img src={product.img} alt="img-product-card" />
-            <h2>{product.nombre}</h2>
-            <p>{product.description}</p>
-            
-            <Link to={`/producto/${product.id}`}>
-                <button>Detalles</button>
-            </Link>
+const Products = (props) => {
+    const products = props.products || [];
+    const navigate = useNavigate();
+    return (
+        <div className="product-card-container">
+            {
+                products.map((product) => (
+                    <div className="card" key={product.id}>
+                        <img src={product.image} alt="img-product-card" />
+                        <h2>{product.title}</h2>
+
+
+                        {/* <Link to={`/producto/${product.id}`}> */}
+                            <button onClick={()=>navigate(`/producto/${product.id}`)}>Detalles</button>
+
+                        {/* </Link> */}
+
+                    </div>
+                ))
+            }
         </div>
-    ));
+    );
 }
 
 export default Products;
