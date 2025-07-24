@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
 
     const handleAddToCart = () => {
         addToCart(product);
-        alert(`${product.title || product.nombre} agregado al carrito`);
+        
     };
 
     if (!product) return <div>Cargando...</div>;

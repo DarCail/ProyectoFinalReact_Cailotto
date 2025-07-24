@@ -1,7 +1,23 @@
 import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
 import { db } from "../Config/Config";
+import { addDoc } from "firebase/firestore";
 
 
+    export const generateOrderFireBase = async (cart)  => {
+
+        const orders = collection(db, "Orders");
+      
+        const productsId = cart.map(product => product.id) 
+        const orderData = {items: productsId}
+        const  orderId = await addDoc(orders, orderData)
+
+      console.log("numero de orden",orderId)
+
+        return orderId.id
+
+       
+
+    }
 
      export const getItem = async () => {
         

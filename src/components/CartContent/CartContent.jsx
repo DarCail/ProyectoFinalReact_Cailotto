@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import "./CartContent.css";
+import {generateOrderFireBase} from "../../Services/Products.Sevices"
 
 const CartContent = () => {
   const { cart, setCart, increaseQty, decreaseQty, removeFromCart } = useContext(CartContext);
@@ -11,8 +12,10 @@ const CartContent = () => {
   );
 
   const handleClear = () => setCart([]);
-  const handleCheckout = () => {
-    alert("¡Gracias por tu compra!");
+  const handleCheckout = async () => {
+    const generateOrder = await generateOrderFireBase(cart)
+
+    alert(`Gracias por tu compra, tu orden es ${generateOrder}`);
     setCart([]);
   };
 

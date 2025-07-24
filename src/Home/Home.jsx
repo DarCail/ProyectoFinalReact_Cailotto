@@ -1,6 +1,7 @@
 import Products from "../components/ItemListContainer/ItemListContainer";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { getItem } from "../Services/Products.Sevices";
+import { useSearchParams } from "react-router-dom";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -12,6 +13,7 @@ const Home = () => {
     };
     fetchItems();
   }, []);
+
 
   return <Products products={products} />;
 };
